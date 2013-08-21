@@ -1,0 +1,17 @@
+<package>
+  <description brief="pcl_conversion">
+    Conversion from PCL messages to ROS messages
+  </description>
+  <author>Markus Eich</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/fuerte</url>
+  <depend package="roscpp" />  
+  <depend package="pcl_msgs" />  
+  <export>
+    <cpp cflags="-I${prefix}/include"/>
+  </export>
+
+</package>
+
+
