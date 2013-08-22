@@ -26,6 +26,7 @@ FIND_PACKAGE(Boost COMPONENTS system REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
+add_test(NAME test_pcl_conversion COMMAND test_pcl_conversions)
 
 #uncomment if you have defined messages
 #rosbuild_genmsg()
