@@ -18,12 +18,14 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 FIND_PACKAGE(PCL 1.7 REQUIRED COMPONENTS common)
 include_directories(${PCL_INCLUDE_DIRS})
-link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-#enable_testing()
-#find_package(gtest REQUIRED)
-#include_directories(${GTEST_INCLUDE_DIR})
+enable_testing()
+
+FIND_PACKAGE(Boost COMPONENTS system REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARY_DIRS})
+
 
 #uncomment if you have defined messages
 #rosbuild_genmsg()
@@ -31,9 +33,6 @@ add_definitions(${PCL_DEFINITIONS})
 #rosbuild_gensrv()
 
 #common commands for building c++ executables and libraries
-#rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
-#target_link_libraries(${PROJECT_NAME} another_library)
-#rosbuild_add_boost_directories()
-#rosbuild_link_boost(${PROJECT_NAME} thread)
-#rosbuild_add_executable(test_pcl_conversions test/test_pcl_conversions.cpp)
-#target_link_libraries(example ${PROJECT_NAME})
+
+rosbuild_add_executable(test_pcl_conversions test/test_pcl_conversions.cpp)
+target_link_libraries(test_pcl_conversions -lgtest -lgtest_main ${Boost_LIBRARIES})
