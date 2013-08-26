@@ -1,0 +1,17 @@
+<package>
+  <description brief="Package for pcl conversion with ROS fuerte">
+    This package is used to convert messages between ROS fuerte and PCL 1.7
+  </description>
+  <author>Markus Eich markus.eich@dfki.de</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dummy</url>
+  <depend package="roscpp" />  
+  <depend package="pcl_msgs" />  
+  <export>
+    <cpp cflags="-I${prefix}/include"/>
+  </export>
+
+</package>
+
+
