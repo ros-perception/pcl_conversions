@@ -24,10 +24,6 @@ add_definitions(${PCL_DEFINITIONS})
 enable_testing()
 add_test(NAME test_pcl_conversion COMMAND test_pcl_conversions)
 
-FIND_PACKAGE(Boost COMPONENTS system REQUIRED)
-include_directories(${Boost_INCLUDE_DIRS})
-link_directories(${Boost_LIBRARY_DIRS})
-
 #find_package(gtest REQUIRED)
 #include_directories(${GTEST_INCLUDE_DIR})
 
@@ -43,4 +39,5 @@ link_directories(${Boost_LIBRARY_DIRS})
 #rosbuild_link_boost(${PROJECT_NAME} thread)
 
 rosbuild_add_executable(test_pcl_conversions test/test_pcl_conversions.cpp)
-target_link_libraries(test_pcl_conversions -lgtest -lgtest_main ${Boost_LIBRARIES})
+rosbuild_link_boost(test_pcl_conversions system)
+rosbuild_add_gtest_build_flags(test_pcl_conversions)
