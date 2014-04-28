@@ -2,6 +2,12 @@
 Changelog for package pcl_conversions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Make pcl_conversions run_depend on libpcl-all-dev
+  When downstream projects build against pcl_conversions, they need the pcl headers provided by libpcl-all-dev.
+* Contributors: Scott K Logan, William Woodall
+
 0.1.5 (2013-08-27)
 ------------------
 * Use new pcl rosdep keys (libpcl-all and libpcl-all-dev)
